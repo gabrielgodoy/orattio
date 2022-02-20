@@ -55,7 +55,7 @@ const Home: NextPage = () => {
                 </a>
                 <a
                   className={style.translation}
-                  href="https://translate.google.com.br/#en/pt/Accolade"
+                  href={`https://translate.google.com.br/#en/pt/${word.word}`}
                   rel="noreferrer"
                   target="_blank"
                 >
