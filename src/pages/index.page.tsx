@@ -1,14 +1,71 @@
+import googleTranslate from "assets/images/google-translate.svg";
+import cx from "classnames";
 import { Layout } from "components";
+import { words as englishWords } from "initial-data/english";
+import { words as portugueseWords } from "initial-data/portuguese";
 import type { NextPage } from "next";
+import Image from "next/image";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import { pages } from "./constants";
-import styles from "./index.module.scss";
+import style from "./index.module.scss";
 
 const Home: NextPage = () => {
   return (
     <Layout pageDetail={pages.home}>
-      <div className={styles.container}>Some content</div>
+      <div className={cx(style.wordsContainer)}>
+        <div className={cx(style.words)}>
+          {portugueseWords.map((word) => {
+            return (
+              <div
+                className={cx(style.wordRow, style.wordPortugueseRow)}
+                key={word.word}
+              >
+                <a
+                  className={style.word}
+                  data-word={word.word}
+                  href={`https://www.priberam.pt/dlpo/${word.word}`}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {word.word}
+                </a>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className={cx(style.words)}>
+          {englishWords.map((word) => {
+            return (
+              <div
+                className={cx(style.wordRow, style.wordPortugueseRow)}
+                key={word.word}
+              >
+                <a
+                  className={style.word}
+                  data-word={word.word}
+                  href={`https://www.priberam.pt/dlpo/${word.word}`}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {word.word}
+                </a>
+                <a
+                  className={style.translation}
+                  href="https://translate.google.com.br/#en/pt/Accolade"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <div className={style.translateIcon}>
+                    <Image alt="google-translate" src={googleTranslate} />
+                  </div>
+                </a>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </Layout>
   );
 };

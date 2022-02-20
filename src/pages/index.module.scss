@@ -14,3 +14,59 @@
     transform: scaleX(-1);
   }
 }
+
+.wordsContainer {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1095px;
+  padding: 0 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.words {
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: top;
+  width: 180px;
+
+  .wordRow {
+    margin: 3px auto 3px 0;
+    min-width: 180px;
+    position: relative;
+    text-align: left;
+
+    .translation {
+      display: block;
+      opacity: 0;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+    }
+
+    &:hover .translation {
+      opacity: 1;
+    }
+
+    .translateIcon {
+      width: 20px;
+    }
+
+    .word {
+      background: #eee;
+      cursor: pointer;
+      display: block;
+      opacity: 1;
+      padding: 10px 20px;
+      position: relative;
+
+      a {
+        color: #555;
+        text-decoration: none;
+      }
+    }
+  }
+}
