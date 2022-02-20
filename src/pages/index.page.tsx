@@ -1,5 +1,5 @@
+import { Layout } from "components";
 import type { NextPage } from "next";
-import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -13,23 +13,19 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>{pages.home.title}</title>
-        <meta content={pages.home.title} name="description" />
-        <link href="/favicon.png" rel="icon" />
-      </Head>
-
-      <main>
-        <Link
-          href="/"
-          locale={router.locale === "en" ? "pt-BR" : "en"}
-          passHref
-        >
-          <button>{t("changeLocale")}</button>
-        </Link>
-      </main>
-    </div>
+    <Layout pageDetail={pages.home}>
+      <div className={styles.container}>
+        <main>
+          <Link
+            href="/"
+            locale={router.locale === "en" ? "pt-BR" : "en"}
+            passHref
+          >
+            <button>{t("changeLocale")}</button>
+          </Link>
+        </main>
+      </div>
+    </Layout>
   );
 };
 

@@ -1,10 +1,15 @@
+export interface IPageDetail {
+  path: string;
+  title: string;
+}
+
 export const pages = {
   home: {
     path: "/",
-    title: "Home page",
+    title: "Orattio",
   },
   otherPage: {
     path: "/other-page",
-    title: "Home page",
+    title: "Other page",
   },
 } as const;
