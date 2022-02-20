@@ -15,6 +15,7 @@ const Home: NextPage = () => {
     <Layout pageDetail={pages.home}>
       <div className={cx(style.wordsContainer)}>
         <div className={cx(style.words)}>
+          <div className={cx(style.title)}>Portuguese</div>
           {portugueseWords.map((word) => {
             return (
               <div
@@ -36,6 +37,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className={cx(style.words)}>
+          <div className={cx(style.title)}>English</div>
           {englishWords.map((word) => {
             return (
               <div
