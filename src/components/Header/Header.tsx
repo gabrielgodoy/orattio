@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
+import { pages } from "pages/constants";
 
-export const SideMenu = () => {
+export const Header = () => {
   const { t } = useTranslation();
 
   return (
@@ -12,7 +13,7 @@ export const SideMenu = () => {
         marginBottom: "20px",
       }}
     >
-      <Link href="/church-fathers" passHref>
+      <Link href={pages.otherPage.path} passHref>
         <button type="button">{t("toSecondPage")}</button>
       </Link>
     </div>

@@ -1,6 +1,5 @@
 import johnPaulii from "assets/images/john-paul-ii.jpeg";
-import { Modal } from "components";
-import { SideMenu } from "components/SideMenu";
+import { Header } from "components/Header";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -9,6 +8,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
+import { pages } from "./constants";
 import styles from "./index.module.scss";
 
 const Home: NextPage = () => {
@@ -17,11 +17,11 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.container}>
-      <SideMenu />
+      <Header />
 
       <Head>
-        <title>Depositum Fidei</title>
-        <meta content="Depositum Fidei" name="description" />
+        <title>{pages.home.title}</title>
+        <meta content={pages.home.title} name="description" />
         <link href="/favicon.png" rel="icon" />
       </Head>
 
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
         <h1>{t("whatDepositumFideiMeans", { ns: "home" })}</h1>
 
         <p>
-          Deposidddtuddddddddm fidei é uma expressão em latim que significa{" "}
+          Depositum fidei é uma expressão em latim que significa{" "}
           <strong>depósito da fé</strong>, que consiste no corpo da verdade
           revelada nas escrituras e na tradição sagrada.
         </p>
