@@ -1,4 +1,5 @@
 import johnPaulii from "assets/images/john-paul-ii.jpeg";
+import { Modal } from "components";
 import { SideMenu } from "components/SideMenu";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -36,7 +37,7 @@ const Home: NextPage = () => {
         <h1>{t("whatDepositumFideiMeans", { ns: "home" })}</h1>
 
         <p>
-          Depositum fidei é uma expressão em latim que significa{" "}
+          Deposidddtuddddddddm fidei é uma expressão em latim que significa{" "}
           <strong>depósito da fé</strong>, que consiste no corpo da verdade
           revelada nas escrituras e na tradição sagrada.
         </p>
