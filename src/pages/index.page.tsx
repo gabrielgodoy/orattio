@@ -1,5 +1,4 @@
 import johnPaulii from "assets/images/john-paul-ii.jpeg";
-import { Header } from "components/Header";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -17,8 +16,6 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.container}>
-      <Header />
-
       <Head>
         <title>{pages.home.title}</title>
         <meta content={pages.home.title} name="description" />
