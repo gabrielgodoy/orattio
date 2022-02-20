@@ -1,4 +1,3 @@
-import { Store } from "@reduxjs/toolkit";
 import { render as rtlRender } from "@testing-library/react";
 import { RouterContext } from "next/dist/shared/lib/router-context";
 import { NextRouter } from "next/router";
