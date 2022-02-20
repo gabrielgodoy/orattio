@@ -1,28 +1,14 @@
 import { Layout } from "components";
 import type { NextPage } from "next";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import { pages } from "./constants";
 import styles from "./index.module.scss";
 
 const Home: NextPage = () => {
-  const { t } = useTranslation();
-  const router = useRouter();
-
   return (
     <Layout pageDetail={pages.home}>
-      <div className={styles.container}>
-        <Link
-          href="/"
-          locale={router.locale === "en" ? "pt-BR" : "en"}
-          passHref
-        >
-          <button>{t("changeLocale")}</button>
-        </Link>
-      </div>
+      <div className={styles.container}>Some content</div>
     </Layout>
   );
 };
