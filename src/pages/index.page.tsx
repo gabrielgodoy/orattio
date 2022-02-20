@@ -15,15 +15,13 @@ const Home: NextPage = () => {
   return (
     <Layout pageDetail={pages.home}>
       <div className={styles.container}>
-        <main>
-          <Link
-            href="/"
-            locale={router.locale === "en" ? "pt-BR" : "en"}
-            passHref
-          >
-            <button>{t("changeLocale")}</button>
-          </Link>
-        </main>
+        <Link
+          href="/"
+          locale={router.locale === "en" ? "pt-BR" : "en"}
+          passHref
+        >
+          <button>{t("changeLocale")}</button>
+        </Link>
       </div>
     </Layout>
   );
